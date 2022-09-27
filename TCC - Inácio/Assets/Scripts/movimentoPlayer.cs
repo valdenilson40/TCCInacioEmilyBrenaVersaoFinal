@@ -57,8 +57,9 @@ public class movimentoPlayer : MonoBehaviour {
         cam = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.visible = false;
+       // Cursor.visible = false;
         relogio = 60;
         infoPlantarArvore.SetActive(false);
         quantArvoresPlantar = 6;
