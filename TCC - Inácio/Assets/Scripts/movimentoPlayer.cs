@@ -51,20 +51,23 @@ public class movimentoPlayer : MonoBehaviour {
     public bool validadorPlantou;
     public string tag;
     public GameObject particulasPlantarArvore;
+    public GameObject cameraPrincipal;
+    public GameObject cameraAnimacao;
 
     void Start() {
 
         cam = Camera.main.transform;
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-        //Cursor.lockState = CursorLockMode.Locked;
-       // Cursor.visible = false;
-       // Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.visible = false;
         relogio = 60;
         infoPlantarArvore.SetActive(false);
         quantArvoresPlantar = 6;
         textQuantArvoresPlantar.text = quantArvoresPlantar.ToString();
 
+        cameraAnimacao.SetActive(false);
     }
   
     void Update() {
@@ -78,6 +81,12 @@ public class movimentoPlayer : MonoBehaviour {
         relogioFase();
 
         RayCastPlayer();
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            cameraAnimacao.SetActive(true);
+            cameraPrincipal.SetActive(false);
+        }
 
 
     }
@@ -193,7 +202,7 @@ public class movimentoPlayer : MonoBehaviour {
                 plantarArvore = rayInfo.transform.gameObject;
                 infoPlantarArvore.SetActive(true);
                
-                if (Input.GetKeyDown(KeyCode.Z)) {
+                if (Input.GetKeyDown(KeyCode.E)) {
 
                     plantarArvore.GetComponent<Animator>().SetTrigger("tronco");
                     quantArvoresPlantar -= 1;
