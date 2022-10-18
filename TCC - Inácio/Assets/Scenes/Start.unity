@@ -370,7 +370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605929025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9025a1947ca27f4594e369cfb443b12, type: 3}
   m_Name: 
@@ -403,6 +403,8 @@ MonoBehaviour:
   validadorPlantou: 0
   tag: 
   particulasPlantarArvore: {fileID: 0}
+  cameraPrincipal: {fileID: 0}
+  cameraAnimacao: {fileID: 0}
 --- !u!143 &605929029
 CharacterController:
   m_ObjectHideFlags: 0
@@ -435,6 +437,18 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.96, z: 0}
+--- !u!114 &605929031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605929025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9027edd14c7ec944ca9abb62163ed085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &728618447
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf2c579c457fbbb43af60a5217558f02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12604
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf2c579c457fbbb43af60a5217558f02, type: 3}
       propertyPath: m_LocalPosition.z
@@ -669,7 +683,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: bf2c579c457fbbb43af60a5217558f02, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7973720199d298d41b9af079c0e1d54b, type: 2}
+      objectReference: {fileID: 9100000, guid: 95e76393ccfd80849bb5282c4c883021, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf2c579c457fbbb43af60a5217558f02, type: 3}
 --- !u!64 &848638911
@@ -1447,8 +1461,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373675443}
   m_LocalRotation: {x: 0.7284162, y: 0.46389142, z: 0.22721414, w: -0.45009822}
-  m_LocalPosition: {x: -7.939054, y: 0.7501987, z: -15.588415}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -7.957, y: 0.40302, z: -15.59}
+  m_LocalScale: {x: 0.32597932, y: 0.32597932, z: 0.32597932}
   m_Children: []
   m_Father: {fileID: 543450652456372308}
   m_RootOrder: 129
@@ -1674,6 +1688,18 @@ PrefabInstance:
     - target: {fileID: 4294455949784720, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294455949784720, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294455949784720, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4294455949784720, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4294455949784720, guid: 53ebac442b16db64f9177d0c749cbb06, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10690,6 +10716,8 @@ MonoBehaviour:
   validadorPlantou: 0
   tag: 
   particulasPlantarArvore: {fileID: 0}
+  cameraPrincipal: {fileID: 0}
+  cameraAnimacao: {fileID: 0}
 --- !u!1 &6427291190484715969
 GameObject:
   m_ObjectHideFlags: 0
