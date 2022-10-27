@@ -8,6 +8,7 @@ public class movimentocamera : MonoBehaviour
     private Camera cameraPrincial;
     private float cameraY;
     
+    
 
 
     void Start()
