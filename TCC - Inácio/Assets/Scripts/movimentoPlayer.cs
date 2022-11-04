@@ -92,7 +92,9 @@ public class movimentoPlayer : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        sensor = Physics.CheckSphere(gruondCheck.position, 0.3f, layerInteracao);
+
+        sensor = Physics.CheckSphere(gruondCheck.position, 1f, layerInteracao);
+
     }
 
     void Inputplayer() {
