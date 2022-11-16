@@ -54,6 +54,13 @@ public class movimentoPlayer : MonoBehaviour {
     public GameObject cameraPrincipal;
     public GameObject cameraAnimacao;
 
+    [Header("Mirando")]
+
+    private bool isAming;
+    public GameObject CM_AnimingCam;
+    public GameObject CroosHaisHUD;
+
+
     void Start() {
 
         cam = Camera.main.transform;
@@ -68,6 +75,9 @@ public class movimentoPlayer : MonoBehaviour {
         textQuantArvoresPlantar.text = quantArvoresPlantar.ToString();
 
         cameraAnimacao.SetActive(false);
+
+        CM_AnimingCam.SetActive(false);
+        CroosHaisHUD.SetActive(false);
     }
   
     void Update() {
@@ -81,6 +91,10 @@ public class movimentoPlayer : MonoBehaviour {
         relogioFase();
 
         RayCastPlayer();
+
+        UddateAnimator();
+
+        InputAtirar();
 
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -116,7 +130,7 @@ public class movimentoPlayer : MonoBehaviour {
         }
 
 
-        if (direcao.magnitude > 0.1f) {
+        if (direcao.magnitude > 0.1f && isAming == false) {
 
             float anguloDestino = Mathf.Atan2(direcao.x, direcao.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
 
@@ -129,9 +143,14 @@ public class movimentoPlayer : MonoBehaviour {
             walk = true;
 
         }
-        else {
+        else if(isAming == true)
+        {
 
             walk = false;
+
+            float angulo = Mathf.SmoothDampAngle(transform.eulerAngles.y, cam.eulerAngles.y, ref suavizancaoVelocidade, suavizacaoMovimento);
+
+            transform.rotation = Quaternion.Euler(0f, angulo, 0f);
 
         }
 
@@ -228,6 +247,52 @@ public class movimentoPlayer : MonoBehaviour {
         }
     }
 
+     void InputAtirar() {
+       
+        
+        if (Input.GetMouseButtonDown(1)) {
 
+            ControleMira(true);
+
+        }
+
+        if (Input.GetMouseButtonUp(1)) {
+
+            ControleMira(false);
+
+        }
+
+        if (Input.GetMouseButtonDown(0)) {
+            
+            ArrowShot();
+
+        }
+    }
+
+    void UddateAnimator() {
+
+        anim.SetBool("mirando", isAming);
+
+    }
+    
+    void ControleMira(bool active) {
+
+        isAming = active;
+
+        CM_AnimingCam.SetActive(isAming);
+        CroosHaisHUD.SetActive(isAming);
+
+    }
+
+
+    void ArrowShot() {
+
+        anim.SetTrigger("atirando");
+
+    }
+
+   void 
+
+  
 
 }
